@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant BHC as BHC_Core_System
+    participant WBPT as Web_PT_Core_System
+    BHC->>BHC: Query Database for Patient
+    alt patient exists in database
+    rect rgb(291, 223, 255)
+        BHC->>WBPT: Send(CreateAppointment w/ Patient Information)
+        WBPT->>BHC: Response(OK)
+    end
+    else patient does not exist in database
+    rect rgb(291, 223, 255)
+        BHC->>WBPT: Send(QueryForPatient)
+        
+        alt patient exists in Web_PT_Core_System
+        rect rgb(291, 223, 255)
+            WBPT->>BHC: Send(PatientInformation)
+            BHC->>BHC: Write patient to db
+            BHC->>WBPT: Send(CreateAppointment w/ Patient Information)
+            WBPT->>BHC: Response(OK)
+    end
+        else patient does not exist in Web_PT_Core_System
+            WBPT->>BHC: Send(NoPatient)
+            BHC->>WBPT: Send(CreatePatient)
+            WBPT->>BHC: Response(OK)
+        end
+    end
+    end
