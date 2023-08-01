@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Pawesome was designed from the ground up to be up and running in minutes.
+        Pawesome is designed to be up and running in minutes.
       </>
     ),
   },

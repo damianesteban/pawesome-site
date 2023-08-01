@@ -14,6 +14,7 @@ function HomepageHeader() {
       <div className="container">
       <img src="img/pawesome.png" alt="" />
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <i>{"Pawesome is an open-source web application that simplifies and optimizes animal shelter and rescue management. It handles everything from intake records to adoption processing, featuring an intuitive interface that tracks an animal's journey. With capabilities like volunteer coordination and donor management, Pawesome caters to all shelter needs, fostering a collaborative environment that evolves with the animal welfare community. Ideal for all scales of operations, Pawesome streamlines animal rescue management, facilitating a more effective and compassionate approach."}</i>
         <div>
           
         </div>
